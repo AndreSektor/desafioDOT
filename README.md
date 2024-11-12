@@ -1,17 +1,15 @@
-## Seller Center - Automação de Testes com Cypress
+## Orange HRM - Automação de Testes com Cypress
 
 
 <div>
     <p align="center">
-        <img src="https://gestao.martins.com.br/images/martins-logo.svg"/>
-        <img src="https://dev.painelsellers.martins.com.br/images/efacil-logo.svg">
+        <img src="https://opensource-demo.orangehrmlive.com/web/images/ohrm_branding.png?v=1721393199309"/>
     </p>
 </div>
 
 
-<h1 align="center"> Automação Plataforma Seller Center </h1>
 
-<h3 align="center">Gestão - Seller</h3>
+<h3 align="center">Login - Usuário</h3>
 
 ## Descrição do Projeto
 
@@ -29,7 +27,7 @@
 ## Status do Projeto
 
 <p align="center">
-    <img src="https://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+    <img src="https://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIDO&color=GREEN&style=for-the-badge"/>
 </p>
 
 ### Pré-requisitos
@@ -50,38 +48,22 @@ Recomendamos o uso do VSCode para edição de código. [VSCode](https://code.vis
 
 # Clone o repositório do projeto
 $ git clone: 
-HTTPS: https://martinsdevsecops@dev.azure.com/martinsdevsecops/B2B-VendasDigitais/_git/Martins.Vendas.GestaoMarketplace.QA
+HTTPS: https://github.com/AndreSektor/desafioDOT.git
 
-SSH: git@ssh.dev.azure.com:v3/martinsdevsecops/B2B-VendasDigitais/Martins.Vendas.GestaoMarketplace.QA
-
-# Com o terminal aberto instale as dependências rodando o comando
+# Com o terminal aberto e o yarn instalado, instale as dependências rodando o comando
 $ yarn
-
-# Crie na raiz do projeto um arquivo "cypress.env.json" e preencha-o como no exemplo "template.env"
 
 ```
 
 
-### Features em desenvolvimento
+### Features em desenvolvidas
 ❌  ❗  ✅
-<h1>Gestão </h1>
+<h1> Orange HRM </h1>
 <p>
-<h3> Login:    B2B  ✅ 
-<h3> Fumaça:   B2B  ❗   (em aprimoramento)
-<h3> Pedido:   B2B  ❗   (em aprimoramento)
-<h3> Produto:  B2B  ❌  (em aprimoramento)
-<h3> Seller:   B2B  ❗   (em aprimoramento)
-<h3> Api:      B2B  ❗   (em aprimoramento)
+<h3> Login:      ✅ 
+<h3> Usuários:   ✅
 
 </p>
-
-<h1>Seller </h1>
-<h3> Login:    B2C  ✅ 
-<h3> Fumaça:   B2C  ❗   (em aprimoramento)
-<h3> Pedido:   B2C  ❌   (em aprimoramento)
-<h3> Produto:  B2C  ❌  (em aprimoramento)
-<h3> Usuário:   B2C  ❗   (em aprimoramento)
-
 
 
 ### 🎲 Rodando os testes
@@ -114,8 +96,6 @@ $ npx cypress run
 
 -
 
-## Autores
+## Autor
 
 🧪🐞 [<img src="https://avatars.githubusercontent.com/u/111364510?s=96&v=4" width=115><br><sub>André Luís</sub>](https://github.com/AndreSektor)
-
-🧪🐞 [<img src="https://avatars.githubusercontent.com/u/93921448?v=4" width=115><br><sub>Leopoldo Dantas</sub>](https://github.com/leopoldofd)

@@ -4,7 +4,7 @@ import login from '../../support/pageObjects/login_page'
 import dash from '../../support/pageObjects/dash_page'
 
 
-describe('Gestão - Funcionalidade Login - Canal Martins', () => {
+describe('Funcionalidade Login', () => {
 
     beforeEach(() => {
 
@@ -15,73 +15,67 @@ describe('Gestão - Funcionalidade Login - Canal Martins', () => {
         login.validarTelaLogin()
     });
 
-    it('Login com sucesso', () => {
+    it('1.Login com sucesso:', () => {
 
         login.login(Cypress.env('Usuario'), Cypress.env('Senha'));
         login.clicarBotaoLogin();
         dash.validarTextoDash('Dashboard');
     });
 
-    // it('1.Login com sucesso:', () => {
+    it('2.UserName inválido:', () => {
 
-    //     login.loginGestao(Cypress.env('Login_PROD_Gestão'), Cypress.env('senhaInvalida'));
-    //     base.clicarBotaoPorNome('Entrar');
-    //     base.validarTextosP('Usuário ou senha incorretos');
-    // });
+        login.login(Cypress.env('UsuarioInv'), Cypress.env('Senha'));
+        login.clicarBotaoLogin();
+        login.validarTextoCredenciais('Invalid credentials');
+    });
 
-    // it('2.UserName inválido:', () => {
+    it('3.Password inválido:', () => {
 
-    //     login.loginGestao(Cypress.env('Login_PROD_Gestão'), Cypress.env('senhaInvalida'));
-    //     base.clicarBotaoPorNome('Entrar');
-    //     base.validarTextosP('Usuário ou senha incorretos');
-    // });
+        login.login(Cypress.env('Usuario'), Cypress.env('SenhaInv'));
+        login.clicarBotaoLogin();
+        login.validarTextoCredenciais('Invalid credentials');
+    });
 
-    // it('3.Password inválido:', () => {
+    it('4.UserName e Password inválidos:', () => {
 
-    //     login.loginGestao('', Cypress.env('Senha_PROD_Gestão'));
-    //     base.clicarBotaoPorNome('Entrar');
-    //     base.validarTextosP('Campo login é obrigatório!');
-    // });
+        login.login(Cypress.env('UsuarioInv'), Cypress.env('SenhaInv'));
+        login.clicarBotaoLogin();
+        login.validarTextoCredenciais('Invalid credentials');
+    });
 
-    // it('4.UserName e Password inválidos:', () => {
+    it('5.Campo UserName vazio(Password válido):', () => {
 
-    //     login.loginGestao('', Cypress.env('Senha_PROD_Gestão'));
-    //     base.clicarBotaoPorNome('Entrar');
-    //     base.validarTextosP('Campo login é obrigatório!');
-    // });
+        login.login('', Cypress.env('Senha'));
+        login.clicarBotaoLogin();
+        login.validarTextoRequeridoUsuario('Required', 1)
+    });
 
-    // it('5.Campo UserName vazio(Password válido):', () => {
+    it('6.Campo UserName vazio(Password inválido):', () => {
 
-    //     login.loginGestao(Cypress.env('Login_PROD_Gestão'), '');
-    //     base.clicarBotaoPorNome('Entrar');
-    //     base.validarTextosP('Campo senha é obrigatório!');
-    // });
+        login.login('', Cypress.env('SenhaInv'));
+        login.clicarBotaoLogin();
+        login.validarTextoRequeridoUsuario('Required', 1)
+    });    
 
-    // it('6.Campo UserName vazio(Password inválido):', () => {
+    it('7.Campo Password vazio(UserName válido):', () => {
 
-    //     base.clicarBotaoPorNome('Entrar');
-    //     base.validarTextosP('Campo login é obrigatório!');
-    //     base.validarTextosP('Campo senha é obrigatório!');
-    // });    
+        login.login(Cypress.env('Usuario'), '');
+        login.clicarBotaoLogin();
+        login.validarTextoRequeridoPassword('Required', 1)
+    });  
 
-    // it('7.Campo Password vazio(UserName válido):', () => {
+    it('8.Campo Password vazio(UserName inválido):', () => {
 
-    //     base.clicarBotaoPorNome('Entrar');
-    //     base.validarTextosP('Campo login é obrigatório!');
-    //     base.validarTextosP('Campo senha é obrigatório!');
-    // });  
+        login.login(Cypress.env('UsuarioInv'), '');
+        login.clicarBotaoLogin();
+        login.validarTextoRequeridoPassword('Required', 1)
+    });  
 
-    // it('8.Campo Password vazio(UserName inválido):', () => {
+    it('9.Campo UserName e Password vazios):', () => {
 
-    //     base.clicarBotaoPorNome('Entrar');
-    //     base.validarTextosP('Campo login é obrigatório!');
-    //     base.validarTextosP('Campo senha é obrigatório!');
-    // });  
-
-    // it('9.Campo UserName e Password vazios):', () => {
-
-    //     base.clicarBotaoPorNome('Entrar');
-    //     base.validarTextosP('Campo login é obrigatório!');
-    //     base.validarTextosP('Campo senha é obrigatório!');
-    // });  
+        login.login('', '');
+        login.clicarBotaoLogin();
+        login.validarTextoRequeridoUsuario('Required', 1)
+        login.validarTextoRequeridoPassword('Required', 1)
+    });  
 });

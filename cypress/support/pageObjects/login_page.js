@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
 const el = require('../elements/login_elements').ELEMENTS
+const elal = require('../elements/login_elements').ALERTA
 
 class login {
 
@@ -28,4 +29,28 @@ class login {
             .should('be.visible')
             .click()
     }
+
+    validarTextoCredenciais(txt) {
+
+        cy.get(elal.txt_credencial)
+            .should('be.visible')
+            .should('have.text', `${txt}`)
+    }
+
+    validarTextoRequeridoUsuario(txt, qtd) {
+
+        cy.get(elal.txt_requerido_usuario)
+            .should('be.visible')
+            .contains(txt)
+            .should('have.length', `${qtd}`)
+    }
+
+    validarTextoRequeridoPassword(txt, qtd) {
+
+        cy.get(elal.txt_requerido_password)
+            .should('be.visible')
+            .contains(txt)
+            .should('have.length', `${qtd}`)
+    }
+
 } export default new login();
