@@ -1,31 +1,31 @@
 /// <reference types="cypress" />
 
-import login from '../../../support/pageObjects/login_page'
-import base from '../../../support/pageObjects/base'
-import menus from '../../../support/pageObjects/menus_page'
-import usuario from '../../../support/pageObjects/usuario_page'
+import login from '../../support/pageObjects/login_page'
+import dash from '../../support/pageObjects/dash_page'
+import usuario from '../../support/pageObjects/usuario_page'
 
-describe('Seller - Funcionalidade Usuário - Canal Martins', () => {
+describe('Funcionalidade Usuário', () => {
 
     beforeEach(() => {
 
-        cy.visit(Cypress.env('SellerHML'));
+        cy.visit(Cypress.env('OrangeUrl'));
         Cypress.on(
             "uncaught:exception", (err, Runnable) => false
         );
-        base.validarNomesBotoes('MARTINS');
-        base.validarNomesBotoes('EFÁCIL');
-        base.validarTextosH(5, 'Olá, Bem vindo ao Marketplace Sellers');
-        login.loginSeller(Cypress.env('Loja_HML_Martins'),  Cypress.env('Login_HML_Martins'), Cypress.env('Senha_HML_Martins'));
-        base.clicarBotaoPorNome('Entrar');
-        base.validarTextosP('Início');
-        menus.acessarMenus('Configurações', 'Usuários');
-        base.clicarBotaoPorNome('Adicionar novo usuário');
+        login.validarTelaLogin()
+        login.login(Cypress.env('Usuario'), Cypress.env('Senha'));
+        login.clicarBotaoLogin();
+        dash.validarTextoDash('Dashboard');
+        usuario.acessarMenuAdmin()
+        usuario.validarListaUsuarios()
     });
 
-    it.only('Criar usuário com sucesso', () => {
+    it('Criar usuário com sucesso', () => {
         
-        usuario.cadastrarUsuario()
+        usuario.acessarCriarUsuario()
+        usuario.validarCriacaoUsuario()
+        usuario.preencherFormulario()
+        usuario.validarUsuarioCriado()
         
     });
 });

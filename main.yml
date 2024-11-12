@@ -1,0 +1,24 @@
+name: End-to-end Tests 🧪
+# Deve rodar toda vez que houver um push
+on: push
+jobs: 
+  chrome:
+    runs-on: ubuntu-latest
+    name: E2E on Chrome
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependences
+        run: npm ci
+      - uses: cypress-io/github-action@v5
+        with:
+          browser: chrome
+  edge:    
+    runs-on: ubuntu-latest
+    name: E2E on Edge
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependences
+        run: npm ci
+      - uses: cypress-io/github-action@v5
+        with:
+          browser: edge           
