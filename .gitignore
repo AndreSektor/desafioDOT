@@ -1,5 +1,5 @@
 cypress/e2e/capturar_elementos.cy.js
-cypress/reports/*
-cypress/screenshots/*
+# cypress/reports/*
+# cypress/screenshots/*
 /node_modules
 cypress/videos/*
