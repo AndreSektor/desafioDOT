@@ -10,9 +10,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
       - uses: action/upload-artifact@v4
-        with:
-          name: cypress-reports
-          path: cypress/reports
-          if-no-files-found: ignore
+      
       
           
