@@ -11,14 +11,14 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       
       - name: Run Cypress tests on Chrome
         uses: cypress-io/github-action@v5
         with:
           browser: chrome
           headless: true
-          config-file: cypress.json 
+          config-file: cypress.json
           
   edge:    
     runs-on: ubuntu-latest
@@ -28,11 +28,11 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       
       - name: Run Cypress tests on Edge
         uses: cypress-io/github-action@v5
         with:
           browser: edge
           headless: true
-          config-file: cypress.json 
+          config-file: cypress.json
