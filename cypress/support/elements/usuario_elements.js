@@ -25,8 +25,12 @@ export const CRIACAO = {
     role_admin: ':nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text-input'
 }
 
+export const MENSAGENS = {
 
-
-
-
-
+    alerta_user_role: ':nth-child(1) > .oxd-grid-2 > :nth-child(1) > .oxd-input-group > .oxd-text',
+    alerta_employee: ':nth-child(1) > .oxd-grid-2 > :nth-child(2) > .oxd-input-group > .oxd-text',
+    alerta_status: ':nth-child(3) > .oxd-input-group > .oxd-text',
+    alerta_username: ':nth-child(4) > .oxd-input-group > .oxd-text',
+    alerta_password: '.user-password-cell > .oxd-input-group > .oxd-text',
+    alerta_confirm_passwrod: '.user-password-row > .oxd-grid-2 > :nth-child(2) > .oxd-input-group > .oxd-text',
+}
