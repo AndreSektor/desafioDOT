@@ -14,7 +14,7 @@
 ## Descrição do Projeto
 
 <p align="center">
-    Projeto desenvolvido em JavaScript com Cypress, focado em recriar fluxos E2E e testes de API.
+    Projeto desenvolvido em JavaScript com Cypress, focado em recriar fluxos E2E.
 </p>
 
 <h1 align="center">
@@ -27,7 +27,7 @@
 ## Status do Projeto
 
 <p align="center">
-    <img src="https://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIDO&color=GREEN&style=for-the-badge"/>
+    <img src="https://img.shields.io/static/v1?label=STATUS&message=%20DESENVOLVIDO&color=GREEN&style=for-the-badge"/>
 </p>
 
 ### Pré-requisitos
