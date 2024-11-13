@@ -9,3 +9,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Cypress run
         uses: cypress-io/github-action@v6
+      - uses: action/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          
