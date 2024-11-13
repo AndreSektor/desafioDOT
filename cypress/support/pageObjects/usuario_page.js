@@ -88,12 +88,8 @@ class usuario {
          
     }
 
-    // validarTextoRequeridoPassword(txt, qtd) {
+    validarCampoUserName() {
 
-    //     cy.get(elal.txt_requerido_password)
-    //         .should('be.visible')
-    //         .contains(txt)
-    //         .should('have.length', `${qtd}`)
-    // }
+    }
 
 } export default new usuario();
