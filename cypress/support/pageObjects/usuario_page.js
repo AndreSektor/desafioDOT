@@ -88,8 +88,4 @@ class usuario {
          
     }
 
-    validarCampoUserName() {
-
-    }
-
 } export default new usuario();
