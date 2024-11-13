@@ -2,36 +2,15 @@ name: End-to-end Tests 🧪
 on: [pull_request, push]
 
 jobs:
-  chrome:
-    runs-on: ubuntu-latest
-    name: E2E on Chrome
+  cypress-run:
+    runs-on: ubuntu-22.04
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      
-      - name: Install dependencies
-        run: yarn install
-      
-      - name: Run Cypress tests on Chrome
-        uses: cypress-io/github-action@v5
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+      - uses: action/upload-artifact@v4
         with:
-          browser: chrome
-          headless: true
-          config-file: cypress.json
+          name: cypress-screenshots
+          path: cypress/screenshots
           
-  edge:    
-    runs-on: ubuntu-latest
-    name: E2E on Edge
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Install dependencies
-        run: yarn install
-      
-      - name: Run Cypress tests on Edge
-        uses: cypress-io/github-action@v5
-        with:
-          browser: edge
-          headless: true
-          config-file: cypress.json
