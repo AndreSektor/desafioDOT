@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "<div>\r     <p align=\"center\">\r         <img src=\"https://opensource-demo.orangehrmlive.com/web/images/ohrm_branding.png?v=1721393199309\"/>\r     </p>\r </div>",
   "main": "cypress.config.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+ "scripts": {
+  "cy:run": "cypress run --config-file=cypress.config.js",
+  "cy:open": "cypress open --config-file=cypress.config.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
